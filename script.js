@@ -34,9 +34,9 @@ const createBotResponse = async (incomingMessageDiv) => {
 
     try {
 
-        // Use localhost:5000 when running locally with live-server (127.0.0.1:5500)
+        // Use localhost:5002 when running locally with live-server (127.0.0.1:5500)
         const baseURL = window.location.hostname === '127.0.0.1' 
-            ? 'http://localhost:5000'
+            ? 'http://localhost:5002'
             : 'https://chat-with-express.vercel.app';
 
         const response = await fetch(`${baseURL}/chat`, {
