@@ -33,8 +33,10 @@ const createBotResponse = async (incomingMessageDiv) => {
     const messageElement = incomingMessageDiv.querySelector(".message-text");
 
     try {
+        const baseURL = window.location.hostname == '127.0.0.1' ?
+        'http://localhost:5002' : 'https://chat-with-express.vercel.app'
         
-        const response = await fetch("http://localhost:5002/chat", {
+        const response = await fetch(`${baseURL}/chat`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: userData.message, file: userData.file.data ? userData.file: null }),
